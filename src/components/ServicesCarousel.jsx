@@ -88,26 +88,29 @@ export function ServicesCarousel({ isDark }) {
                     {service.description}
                   </p>
                 </div>
-                <div className="flex gap-3 mt-6">
+                <div className="flex gap-3 mt-6 justify-center">
                   <a
                     href="#contacto"
-                    className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold py-2 px-4 rounded-lg transition text-center text-sm"
+                    className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold rounded-full transition flex items-center justify-center text-lg"
+                    title="Más Información"
                   >
-                    📖 Info
+                    📖
                   </a>
                   <a
                     href={`mailto:${CONTACT_INFO.email}`}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition text-center text-sm"
+                    className="w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition flex items-center justify-center text-lg"
+                    title="Enviar Email"
                   >
-                    📧 Email
+                    📧
                   </a>
                   <a
                     href={CONTACT_INFO.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition text-center text-sm"
+                    className="w-12 h-12 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full transition flex items-center justify-center text-lg"
+                    title="WhatsApp"
                   >
-                    💬 WA
+                    💬
                   </a>
                 </div>
               </div>
