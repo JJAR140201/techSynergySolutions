@@ -219,18 +219,38 @@ export function ChatBot() {
 
           {/* Servicios rápidos */}
           {messages.length <= 2 && !selectedService && (
-            <div className="px-4 py-3 border-t bg-white">
-              <p className="text-xs text-gray-600 mb-2 font-bold">👇 Selecciona un servicio:</p>
-              <div className="grid grid-cols-2 gap-2">
-                {services.map((s) => (
-                  <button
-                    key={s.id}
-                    onClick={() => handleServiceClick(s.id)}
-                    className="text-xs bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white p-2 rounded transition transform hover:scale-105 font-semibold"
-                  >
-                    <div>{s.name}</div>
-                    <div className="text-xs opacity-90">{s.desc}</div>
-                  </button>
+            <div className="px-4 py-3 border-t bg-white max-h-72 overflow-y-auto">
+              <p className="text-xs text-gray-600 mb-2 font-bold">👇 Nuestros Servicios:</p>
+              <div className="space-y-2">
+                {services.map(service => (
+                  <div key={service.id} className="bg-gradient-to-r from-gray-50 to-gray-100 p-3 rounded-lg border-l-4 border-orange-500">
+                    <div className="flex justify-between items-start gap-2">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-sm text-gray-800">{service.name}</h4>
+                        <p className="text-xs text-gray-600 mt-1">{service.desc}</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 mt-2">
+                      <button
+                        onClick={() => handleServiceClick(service.id)}
+                        className="flex-1 text-xs bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white p-1.5 rounded transition font-semibold"
+                      >
+                        📖 Info
+                      </button>
+                      <button
+                        onClick={() => handleContactClick('whatsapp')}
+                        className="text-xs bg-green-500 hover:bg-green-600 text-white p-1.5 rounded transition font-semibold"
+                      >
+                        💬
+                      </button>
+                      <button
+                        onClick={() => handleContactClick('email')}
+                        className="text-xs bg-blue-500 hover:bg-blue-600 text-white p-1.5 rounded transition font-semibold"
+                      >
+                        📧
+                      </button>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -238,25 +258,27 @@ export function ChatBot() {
 
           {/* Contactos */}
           {selectedService && (
-            <div className="px-4 py-2 border-t bg-gradient-to-r from-orange-50 to-red-50">
-              <p className="text-xs text-gray-700 mb-2 font-bold">📞 Contacta:</p>
-              <div className="flex gap-2 justify-center">
+            <div className="px-4 py-3 border-t bg-gradient-to-r from-orange-50 to-red-50 space-y-2">
+              <div className="flex gap-2 justify-between items-center">
+                <p className="text-xs text-gray-700 font-bold">¿Te interesa este servicio?</p>
                 <button
                   onClick={() => setSelectedService(null)}
-                  className="flex items-center gap-1 bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded text-xs transition"
+                  className="flex items-center gap-1 bg-gray-500 hover:bg-gray-600 text-white px-2 py-1 rounded text-xs transition"
                   title="Volver al menú principal"
                 >
                   <Home size={14} /> Menú
                 </button>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => handleContactClick('email')}
-                  className="flex items-center gap-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition"
+                  className="flex items-center justify-center gap-1 bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded text-xs transition font-semibold"
                 >
                   <Mail size={14} /> Email
                 </button>
                 <button
                   onClick={() => handleContactClick('whatsapp')}
-                  className="flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs transition"
+                  className="flex items-center justify-center gap-1 bg-green-500 hover:bg-green-600 text-white px-2 py-2 rounded text-xs transition font-semibold"
                 >
                   <MessageSquare size={14} /> WhatsApp
                 </button>

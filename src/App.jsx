@@ -3,6 +3,7 @@ import './App.css'
 import { Logo } from './components/Logo.jsx'
 import { ThemeToggle } from './components/ThemeToggle.jsx'
 import { ChatBot } from './components/ChatBot.jsx'
+import { ServicesCarousel } from './components/ServicesCarousel.jsx'
 import { CONTACT_INFO } from './config/contact.js'
 
 function App() {
@@ -42,74 +43,9 @@ function App() {
         </section>
 
         <section id="servicios" className={`transition-colors duration-300 py-20 md:py-32 ${isDark ? 'bg-gray-800 bg-opacity-50' : 'bg-gradient-to-br from-gray-100 to-gray-50'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-4xl md:text-5xl font-bold text-center mb-16">Nuestros Servicios</h3>
-            <div className="grid md:grid-cols-4 gap-6 mb-8">
-              <div className={`p-6 rounded-lg border-l-4 border-red-600 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-red-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-red-300/50'}`}>
-                <div className="text-3xl mb-3">🔧</div>
-                <h4 className={`text-lg font-bold mb-3 ${isDark ? 'text-red-400' : 'text-red-700'}`}>Mantenimiento de Equipos</h4>
-                <p className={`text-sm mb-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Ofrecemos servicios de mantenimiento preventivo y correctivo de equipos de cómputo. Mantén tu infraestructura en óptimas condiciones.</p>
-                <div className="flex gap-2">
-                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📖 Info
-                  </a>
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📧 Email
-                  </a>
-                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    💬 WA
-                  </a>
-                </div>
-              </div>
-              <div className={`p-6 rounded-lg border-l-4 border-green-600 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-green-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-green-300/50'}`}>
-                <div className="text-3xl mb-3">💻</div>
-                <h4 className={`text-lg font-bold mb-3 ${isDark ? 'text-green-400' : 'text-green-700'}`}>Desarrollo de Software</h4>
-                <p className={`text-sm mb-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Desarrollamos software a medida que impulsa la productividad y la innovación en tu organización.</p>
-                <div className="flex gap-2">
-                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📖 Info
-                  </a>
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📧 Email
-                  </a>
-                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    💬 WA
-                  </a>
-                </div>
-              </div>
-              <div className={`p-6 rounded-lg border-l-4 border-blue-600 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-blue-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-blue-300/50'}`}>
-                <div className="text-3xl mb-3">🌐</div>
-                <h4 className={`text-lg font-bold mb-3 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>Gestión de Redes</h4>
-                <p className={`text-sm mb-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Gestionamos redes empresariales seguras y eficientes. Conectividad confiable para tu negocio.</p>
-                <div className="flex gap-2">
-                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📖 Info
-                  </a>
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📧 Email
-                  </a>
-                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    💬 WA
-                  </a>
-                </div>
-              </div>
-              <div className={`p-6 rounded-lg border-l-4 border-orange-500 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-orange-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-orange-300/50'}`}>
-                <div className="text-3xl mb-3">🤖</div>
-                <h4 className={`text-lg font-bold mb-3 ${isDark ? 'text-orange-400' : 'text-orange-600'}`}>Automatización con IA</h4>
-                <p className={`text-sm mb-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Realizamos automatización de servicios de WhatsApp utilizando inteligencia artificial, para optimizar la atención al cliente.</p>
-                <div className="flex gap-2">
-                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📖 Info
-                  </a>
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    📧 Email
-                  </a>
-                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-1.5 px-3 rounded-lg transition text-center text-xs">
-                    💬 WA
-                  </a>
-                </div>
-              </div>
-            </div>
+            <ServicesCarousel isDark={isDark} />
           </div>
         </section>
 
