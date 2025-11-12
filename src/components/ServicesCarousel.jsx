@@ -91,26 +91,26 @@ export function ServicesCarousel({ isDark }) {
                 <div className="flex gap-3 mt-6 justify-center">
                   <a
                     href="#contacto"
-                    className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold rounded-full transition flex items-center justify-center text-lg"
+                    className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold rounded-full transition flex items-center justify-center"
                     title="Más Información"
                   >
-                    📖
+                    <img src="/info.svg" alt="Info" className="w-6 h-6" />
                   </a>
                   <a
                     href={`mailto:${CONTACT_INFO.email}`}
-                    className="w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition flex items-center justify-center text-lg"
+                    className="w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition flex items-center justify-center p-1"
                     title="Enviar Email"
                   >
-                    📧
+                    <img src="/gmail.png" alt="Gmail" className="w-full h-full rounded-full" />
                   </a>
                   <a
                     href={CONTACT_INFO.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full transition flex items-center justify-center text-lg"
+                    className="w-12 h-12 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full transition flex items-center justify-center p-1"
                     title="WhatsApp"
                   >
-                    💬
+                    <img src="/whatsapp.png" alt="WhatsApp" className="w-full h-full rounded-full" />
                   </a>
                 </div>
               </div>
