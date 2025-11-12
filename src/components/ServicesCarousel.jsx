@@ -34,28 +34,28 @@ export function ServicesCarousel({ isDark }) {
       id: 1,
       icon: '🔧',
       title: 'Mantenimiento de Equipos',
-      description: 'Ofrecemos servicios de mantenimiento preventivo y correctivo de equipos de cómputo. Mantén tu infraestructura en óptimas condiciones.',
+      description: 'Ofrecemos servicios de mantenimiento preventivo y correctivo de equipos de cómputo. Revisamos, limpiamos y reparamos tu infraestructura tecnológica para mantenerla en óptimas condiciones, evitando fallos inesperados y prolongando la vida útil de tus dispositivos.',
       color: 'red',
     },
     {
       id: 2,
       icon: '💻',
       title: 'Desarrollo de Software',
-      description: 'Desarrollamos software a medida que impulsa la productividad y la innovación en tu organización.',
+      description: 'Desarrollamos soluciones de software personalizadas que se adaptan perfectamente a las necesidades de tu negocio. Desde aplicaciones web hasta sistemas empresariales, nuestro equipo crea software robusto, escalable e innovador que impulsa la productividad y competitividad de tu organización.',
       color: 'green',
     },
     {
       id: 3,
       icon: '🌐',
       title: 'Gestión de Redes',
-      description: 'Gestionamos redes empresariales seguras y eficientes. Conectividad confiable para tu negocio.',
+      description: 'Gestionamos redes empresariales seguras, confiables y eficientes. Implementamos infraestructuras de red modernas, monitoreamos conectividad en tiempo real y proporcionamos soporte técnico especializado para garantizar que tu negocio esté siempre conectado sin interrupciones.',
       color: 'blue',
     },
     {
       id: 4,
       icon: '🤖',
       title: 'Automatización con IA',
-      description: 'Realizamos automatización de servicios de WhatsApp utilizando inteligencia artificial, para optimizar la atención al cliente.',
+      description: 'Realizamos automatización inteligente de servicios de WhatsApp utilizando tecnología de inteligencia artificial. Optimizamos la atención al cliente con chatbots automáticos, respuestas instantáneas y gestión eficiente de conversaciones para mejorar la experiencia de tus clientes 24/7.',
       color: 'orange',
     },
   ]
@@ -88,16 +88,16 @@ export function ServicesCarousel({ isDark }) {
                     {service.description}
                   </p>
                 </div>
-                <div className="flex gap-4 mt-6">
+                <div className="flex gap-3 mt-6">
                   <a
                     href="#contacto"
-                    className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-5 rounded-lg transition text-center text-base"
+                    className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold py-2 px-4 rounded-lg transition text-center text-sm"
                   >
-                    📖 Más Info
+                    📖 Info
                   </a>
                   <a
                     href={`mailto:${CONTACT_INFO.email}`}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-5 rounded-lg transition text-center text-base"
+                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition text-center text-sm"
                   >
                     📧 Email
                   </a>
@@ -105,9 +105,9 @@ export function ServicesCarousel({ isDark }) {
                     href={CONTACT_INFO.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-lg transition text-center text-base"
+                    className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition text-center text-sm"
                   >
-                    💬 WhatsApp
+                    💬 WA
                   </a>
                 </div>
               </div>
