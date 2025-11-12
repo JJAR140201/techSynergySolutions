@@ -12,6 +12,7 @@
     "debug": "^4.4.3",
     "detect-libc": "^2.1.2",
     "electron-to-chromium": "^1.5.250",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "enhanced-resolve": "^5.18.3",
     "esbuild": "^0.25.12",
