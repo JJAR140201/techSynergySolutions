@@ -102,13 +102,31 @@ export function ChatBot() {
     if (!inputValue.trim()) return
 
     const userMsg = inputValue.trim()
+    const msgLower = userMsg.toLowerCase()
+
+    // Comando para volver al menú
+    if (msgLower === 'menu' || msgLower === 'inicio' || msgLower === 'volver' || msgLower === '/menu') {
+      setMessages((prev) => [
+        ...prev,
+        { id: Date.now(), type: 'user', text: userMsg },
+      ])
+      setInputValue('')
+      setSelectedService(null)
+      setTimeout(() => {
+        setMessages((prev) => [
+          ...prev,
+          { id: Date.now(), type: 'bot', text: '👈 Volvimos al menú principal. ¿Cuál es tu próxima consulta?' },
+        ])
+      }, 500)
+      return
+    }
+
     setMessages((prev) => [
       ...prev,
       { id: Date.now(), type: 'user', text: userMsg },
     ])
     setInputValue('')
 
-    const msgLower = userMsg.toLowerCase()
     let botResponse = '💡 Entendido. ¿Podrías darme más detalles?'
 
     if (msgLower.includes('precio') || msgLower.includes('costo')) {
@@ -121,6 +139,8 @@ export function ChatBot() {
       botResponse = '😊 ¡De nada! ¿Hay algo más en lo que pueda ayudarte?'
     } else if (msgLower.includes('hola') || msgLower.includes('hi')) {
       botResponse = '👋 ¡Hola! ¿En qué servicio estás interesado hoy?'
+    } else if (msgLower.includes('ayuda') || msgLower.includes('help') || msgLower.includes('comandos')) {
+      botResponse = '📋 Comandos disponibles:\n• "menu" / "inicio" / "volver" - Ir al menú\n• "precio" - Consultar precios\n• "contacto" - Información de contacto'
     }
 
     setTimeout(() => {
