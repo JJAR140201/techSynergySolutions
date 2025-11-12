@@ -48,22 +48,66 @@ function App() {
               <div className={`p-8 rounded-lg border-l-4 border-red-600 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-red-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-red-300/50'}`}>
                 <div className="text-4xl mb-4">🔧</div>
                 <h4 className={`text-2xl font-bold mb-4 ${isDark ? 'text-red-400' : 'text-red-700'}`}>Mantenimiento de Equipos</h4>
-                <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Ofrecemos servicios de mantenimiento preventivo y correctivo de equipos de cómputo. Mantén tu infraestructura en óptimas condiciones.</p>
+                                <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Ofrecemos servicios de mantenimiento preventivo y correctivo de equipos de cómputo. Mantén tu infraestructura en óptimas condiciones.</p>
+                <div className="flex gap-3 mt-4">
+                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📖 Más Info
+                  </a>
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📧 Email
+                  </a>
+                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    💬 WhatsApp
+                  </a>
+                </div>
               </div>
               <div className={`p-8 rounded-lg border-l-4 border-green-600 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-green-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-green-300/50'}`}>
                 <div className="text-4xl mb-4">💻</div>
                 <h4 className={`text-2xl font-bold mb-4 ${isDark ? 'text-green-400' : 'text-green-700'}`}>Desarrollo de Software</h4>
                 <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Desarrollamos software a medida que impulsa la productividad y la innovación en tu organización.</p>
+                <div className="flex gap-3 mt-4">
+                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📖 Más Info
+                  </a>
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📧 Email
+                  </a>
+                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    💬 WhatsApp
+                  </a>
+                </div>
               </div>
               <div className={`p-8 rounded-lg border-l-4 border-blue-600 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-blue-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-blue-300/50'}`}>
                 <div className="text-4xl mb-4">🌐</div>
                 <h4 className={`text-2xl font-bold mb-4 ${isDark ? 'text-blue-400' : 'text-blue-700'}`}>Gestión de Redes</h4>
                 <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Gestionamos redes empresariales seguras y eficientes. Conectividad confiable para tu negocio.</p>
+                <div className="flex gap-3 mt-4">
+                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📖 Más Info
+                  </a>
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📧 Email
+                  </a>
+                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    💬 WhatsApp
+                  </a>
+                </div>
               </div>
               <div className={`p-8 rounded-lg border-l-4 border-orange-500 transition-all duration-300 ${isDark ? 'bg-gray-700 shadow-lg hover:shadow-2xl hover:shadow-orange-500/30' : 'bg-white shadow-lg hover:shadow-2xl hover:shadow-orange-300/50'}`}>
                 <div className="text-4xl mb-4">🤖</div>
                 <h4 className={`text-2xl font-bold mb-4 ${isDark ? 'text-orange-400' : 'text-orange-600'}`}>Automatización con IA</h4>
                 <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Realizamos automatización de servicios de WhatsApp utilizando inteligencia artificial, para optimizar la atención al cliente.</p>
+                <div className="flex gap-3 mt-4">
+                  <a href="#contacto" className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📖 Más Info
+                  </a>
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    📧 Email
+                  </a>
+                  <a href={CONTACT_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition text-center text-sm">
+                    💬 WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           </div>
