@@ -101,7 +101,7 @@ export function ServicesCarousel({ isDark }) {
                     className="w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition flex items-center justify-center p-1"
                     title="Enviar Email"
                   >
-                    <img src="/gmail.png" alt="Gmail" className="w-full h-full rounded-full" />
+                    <img src="/gmail.webp" alt="Gmail" className="w-full h-full rounded-full object-cover" />
                   </a>
                   <a
                     href={CONTACT_INFO.whatsapp}
@@ -110,7 +110,7 @@ export function ServicesCarousel({ isDark }) {
                     className="w-12 h-12 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full transition flex items-center justify-center p-1"
                     title="WhatsApp"
                   >
-                    <img src="/whatsapp.png" alt="WhatsApp" className="w-full h-full rounded-full" />
+                    <img src="/whatsapp.webp" alt="WhatsApp" className="w-full h-full rounded-full object-cover" />
                   </a>
                 </div>
               </div>
