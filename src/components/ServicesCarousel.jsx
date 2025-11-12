@@ -9,14 +9,12 @@ export function ServicesCarousel({ isDark }) {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
-      align: 'start',
+      align: 'center',
       loop: true,
       skipSnaps: false,
     },
     [autoplayPlugin]
   )
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
 
   const scrollPrev = () => {
     if (emblaApi) {
@@ -30,21 +28,6 @@ export function ServicesCarousel({ isDark }) {
       autoplayPlugin.reset()
     }
   }
-
-  const onSelect = () => {
-    if (!emblaApi) return
-    setPrevBtnDisabled(!emblaApi.canScrollPrev())
-    setNextBtnDisabled(!emblaApi.canScrollNext())
-  }
-
-  useEffect(() => {
-    if (!emblaApi) return
-    onSelect()
-    emblaApi.on('select', onSelect)
-    return () => {
-      emblaApi.off('select', onSelect)
-    }
-  }, [emblaApi])
 
   const services = [
     {
@@ -87,32 +70,34 @@ export function ServicesCarousel({ isDark }) {
   return (
     <div className="w-full">
       <div className="relative overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-8">
+        <div className="flex gap-10">
           {services.map((service) => (
             <div
               key={service.id}
-              className={`flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]`}
+              className={`flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_100%]`}
             >
               <div
-                className={`h-full p-8 rounded-lg border-l-4 transition-all duration-300 ${isDark ? `bg-gray-700 shadow-lg hover:shadow-2xl ${colorMap[service.color]}` : `bg-white shadow-lg hover:shadow-2xl hover:shadow-${service.color}-300/50`}`}
+                className={`h-full p-10 rounded-xl border-l-8 transition-all duration-300 flex flex-col justify-between ${isDark ? `bg-gray-700 shadow-2xl hover:shadow-2xl ${colorMap[service.color]}` : `bg-white shadow-2xl hover:shadow-2xl hover:shadow-${service.color}-300/50`}`}
               >
-                <div className="text-5xl mb-4">{service.icon}</div>
-                <h4 className={`text-xl font-bold mb-4 ${isDark ? colorMap[service.color] : `text-${service.color}-700`}`}>
-                  {service.title}
-                </h4>
-                <p className={`text-base mb-6 leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  {service.description}
-                </p>
-                <div className="flex gap-3">
+                <div>
+                  <div className="text-6xl mb-5">{service.icon}</div>
+                  <h4 className={`text-2xl font-bold mb-5 ${isDark ? colorMap[service.color] : `text-${service.color}-700`}`}>
+                    {service.title}
+                  </h4>
+                  <p className={`text-lg mb-8 leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {service.description}
+                  </p>
+                </div>
+                <div className="flex gap-4 mt-6">
                   <a
                     href="#contacto"
-                    className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-2.5 px-4 rounded-lg transition text-center text-sm"
+                    className="flex-1 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-5 rounded-lg transition text-center text-base"
                   >
-                    📖 Info
+                    📖 Más Info
                   </a>
                   <a
                     href={`mailto:${CONTACT_INFO.email}`}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2.5 px-4 rounded-lg transition text-center text-sm"
+                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-5 rounded-lg transition text-center text-base"
                   >
                     📧 Email
                   </a>
@@ -120,9 +105,9 @@ export function ServicesCarousel({ isDark }) {
                     href={CONTACT_INFO.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-4 rounded-lg transition text-center text-sm"
+                    className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-lg transition text-center text-base"
                   >
-                    💬 WA
+                    💬 WhatsApp
                   </a>
                 </div>
               </div>
@@ -132,20 +117,18 @@ export function ServicesCarousel({ isDark }) {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-center gap-4 mt-8">
+      <div className="flex justify-center gap-6 mt-10">
         <button
           onClick={scrollPrev}
-          disabled={prevBtnDisabled}
-          className={`p-3 rounded-full transition ${prevBtnDisabled ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : `${isDark ? 'bg-orange-600 hover:bg-orange-700 text-white' : 'bg-orange-500 hover:bg-orange-600 text-white'}`}`}
+          className={`p-4 rounded-full transition transform hover:scale-110 ${isDark ? 'bg-orange-600 hover:bg-orange-700 text-white' : 'bg-orange-500 hover:bg-orange-600 text-white'}`}
         >
-          <ChevronLeft size={28} />
+          <ChevronLeft size={32} />
         </button>
         <button
           onClick={scrollNext}
-          disabled={nextBtnDisabled}
-          className={`p-3 rounded-full transition ${nextBtnDisabled ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : `${isDark ? 'bg-orange-600 hover:bg-orange-700 text-white' : 'bg-orange-500 hover:bg-orange-600 text-white'}`}`}
+          className={`p-4 rounded-full transition transform hover:scale-110 ${isDark ? 'bg-orange-600 hover:bg-orange-700 text-white' : 'bg-orange-500 hover:bg-orange-600 text-white'}`}
         >
-          <ChevronRight size={28} />
+          <ChevronRight size={32} />
         </button>
       </div>
     </div>
