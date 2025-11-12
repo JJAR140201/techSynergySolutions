@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { MessageCircle, X, Send, Mail, MessageSquare } from 'lucide-react'
+import { MessageCircle, X, Send, Mail, MessageSquare, Home } from 'lucide-react'
 import { CONTACT_INFO } from '../config/contact'
 
 export function ChatBot() {
@@ -219,8 +219,15 @@ export function ChatBot() {
           {/* Contactos */}
           {selectedService && (
             <div className="px-4 py-2 border-t bg-gradient-to-r from-orange-50 to-red-50">
-              <p className="text-xs text-gray-700 mb-2 font-bold">📞 Contáctanos directamente:</p>
+              <p className="text-xs text-gray-700 mb-2 font-bold">📞 Contacta:</p>
               <div className="flex gap-2 justify-center">
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="flex items-center gap-1 bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded text-xs transition"
+                  title="Volver al menú principal"
+                >
+                  <Home size={14} /> Menú
+                </button>
                 <button
                   onClick={() => handleContactClick('email')}
                   className="flex items-center gap-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs transition"
@@ -242,9 +249,9 @@ export function ChatBot() {
             <input
               type="text"
               value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-              placeholder="Escribe aquí..."
+              onChange={e => setInputValue(e.target.value)}
+              onKeyPress={e => e.key === 'Enter' && handleSendMessage()}
+              placeholder="Escribe 'menu' para volver..."
               className="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
             <button
